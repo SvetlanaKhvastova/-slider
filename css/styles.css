@@ -1,0 +1,112 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.section {
+  padding: 150px 0;
+  background-color: #333;
+}
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.page-title {
+  font-size: 38px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: aliceblue;
+}
+.slider {
+  width: 900px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+.slider-wrap {
+  display: flex;
+  position: absolute;
+}
+
+.slider-item {
+  width: 900px;
+}
+.slider:hover .slider-wrap {
+  transform: translateX(-2700px);
+  transition: 5s steps(3, end);
+}
+
+.slick-slider-item {
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+.slick-slider-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+.slider-title {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  font-size: 75px;
+  font-weight: 900;
+  color: blue;
+
+  text-align: center;
+  margin: 0;
+  opacity: 0;
+
+  animation-name: changeBgColor;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  transition: all 800ms ease-in 0.5s;
+}
+
+.slick-active .slider-title {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.slider-title:hover {
+  animation-play-state: paused;
+}
+
+@keyframes changeBgColor {
+  0% {
+    color: deeppink;
+  }
+
+  50% {
+    color: orange;
+  }
+
+  100% {
+    color: deepskyblue;
+  }
+}
+.slider-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
